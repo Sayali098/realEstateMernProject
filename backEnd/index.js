@@ -39,13 +39,12 @@ mongoose
   app.use('/api/listing',listingRouter)
   
 
-  app.use(express.static(path.join(__dirname,'/frontEnd/vite-project/dist')))
-  
-  app.get('*',(req,res)=>{
+  app.use(express.static(path.join(__dirname, 'frontEnd', 'vite-project', 'dist')));
 
-    res.sendFile(path.join(__dirname,'frontEnd/vite-project','dist','index.html'))
-  })
-
+// Handle all other routes by serving the index.html file
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontEnd', 'vite-project', 'dist', 'index.html'));
+});
   app.use((err,req,res,next)=>{
     const statuscode=err.statuscode || 500;
     const message=err.message || 'Internal Server Error'
