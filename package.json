@@ -1,5 +1,13 @@
 {
+  "name": "realEstateMernProject",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm run dev --prefix backEnd",
+    "start": "npm run start --prefix backEnd",
+    "build": "npm install && npm install --prefix backEnd && npm install --prefix frontEnd/vite-project && npm run build --prefix frontEnd/vite-project"
+  },
   "dependencies": {
-    "redux-devtools-extension": "^2.13.9"
+    "redux-devtools-extension": "^2.13.9",
+    "other-dependencies": "x.x.x"
   }
 }
